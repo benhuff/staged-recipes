@@ -15,7 +15,7 @@ build:
   number: 0
   skip: True  # [py2k or osx or win]
   script:
-    - export CUDA_HOME=${SRC_DIR}/cuda
+    - export CUDA_HOME=/usr/local/cuda
     - export PATH=${CUDA_HOME}/bin:${PATH}
     - export LD_LIBRARY_PATH=${CUDA_HOME}/lib64:$LD_LIBRARY_PATH
     - "{{ PYTHON }} -m pip install . -vv"
