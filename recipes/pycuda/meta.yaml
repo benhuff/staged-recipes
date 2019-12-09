@@ -15,8 +15,9 @@ build:
   number: 0
   skip: True  # [py2k or osx]
   script:
-    - export C_INCLUDE_PATH="${CUDA_HOME}/include:${C_INCLUDE_PATH}"
-    - export LIBRARY_PATH="${CUDA_HOME}/lib64:$LIBRARY_PATH"
+    - export C_INCLUDE_PATH=${CUDA_HOME}/include:${C_INCLUDE_PATH}
+    - export LIBRARY_PATH=${CUDA_HOME}/lib64:$LIBRARY_PATH
+    - echo ${CUDA_HOME}
     - "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
@@ -29,7 +30,6 @@ requirements:
     - python >=3.6
     - numpy >=1.6
     - setuptools
-    - cudnn
     - cudatoolkit
   run:
     - python >=3.6
