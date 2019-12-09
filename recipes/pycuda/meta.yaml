@@ -16,9 +16,9 @@ build:
   skip: True  # [py2k or osx or win]
   script:
     - export PATH="${PATH}:${CUDA_HOME}/bin"
-    - export C_INCLUDE_PATH="${CUDA_HOME}/include:${C_INCLUDE_PATH}"
+    - export CUDA_INC_DIR="${CUDA_HOME}/include:${CUDA_INC_DIR}"
     - export LIBRARY_PATH="${CUDA_HOME}/lib64:$LIBRARY_PATH"
-    - "{{ PYTHON }} -m pip install . -vvv"
+    - "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   build:
@@ -31,7 +31,6 @@ requirements:
     - numpy >=1.6
     - setuptools
     - cudnn
-    - nccl
   run:
     - python >=3.6
     - appdirs >=1.4.0
@@ -40,7 +39,6 @@ requirements:
     - pytools >=2011.2
     - numpy >=1.6
     - cudnn
-    - nccl
 
 test:
   imports:
