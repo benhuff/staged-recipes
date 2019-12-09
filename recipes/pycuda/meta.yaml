@@ -15,6 +15,7 @@ build:
   number: 0
   skip: True  # [py2k or osx]
   script:
+    - ln -s ${CUDA_HOME}/include/* ${CONDA_PREFIX}/include/
     - export PATH="${PATH}:${CUDA_HOME}/bin"
     - export C_INCLUDE_PATH="${CUDA_HOME}/include:${C_INCLUDE_PATH}"
     - export LIBRARY_PATH="${CUDA_HOME}/lib64:$LIBRARY_PATH"
@@ -25,6 +26,8 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - {{ compiler('cuda') }}  # [linux64 and cuda_compiler_version != "None"]
+    - cudatoolkit
+    - cudnn
   host:
     - pip
     - python >=3.6
