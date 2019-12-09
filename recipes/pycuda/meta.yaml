@@ -27,12 +27,15 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - {{ compiler('cuda') }}
+    - cudnn
+    - cudatoolkit
   host:
     - pip
     - python >=3.6
     - numpy >=1.6
     - setuptools
     - cudnn
+    - cudatoolkit
   run:
     - python >=3.6
     - appdirs >=1.4.0
@@ -40,7 +43,6 @@ requirements:
     - mako
     - pytools >=2011.2
     - numpy >=1.6
-    - cudnn
 
 test:
   imports:
