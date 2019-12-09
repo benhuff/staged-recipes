@@ -13,10 +13,10 @@ source:
 
 build:
   number: 0
-  skip: True  # [py2k or osx]
+  skip: True  # [py2k or not linux]
   script:
     - export PATH="${PATH}:${CUDA_HOME}/bin"
-    - export C_INCLUDE_PATH="${CUDA_HOME}/include:${C_INCLUDE_PATH}"
+    - export CUDA_INC_DIR="${CUDA_HOME}/include:${CUDA_INC_DIR}"
     - export LIBRARY_PATH="${CUDA_HOME}/lib64:$LIBRARY_PATH"
     - "{{ PYTHON }} -m pip install . -vvv"
 
