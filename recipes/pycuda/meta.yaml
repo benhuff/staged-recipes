@@ -18,7 +18,7 @@ build:
     - export C_INCLUDE_PATH=${CUDA_HOME}/include:${C_INCLUDE_PATH}
     - export LIBRARY_PATH=${CUDA_HOME}/lib64:$LIBRARY_PATH
     - echo ${CUDA_HOME}
-    - "{{ PYTHON }} -m pip install . -vv"
+    - "{{ PYTHON }} -m pip install . -vvv"
 
 requirements:
   build:
