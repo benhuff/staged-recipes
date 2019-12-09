@@ -15,7 +15,8 @@ build:
   number: 0
   skip: True  # [py2k or osx or win]
   script:
-    - export CUDA_HOME=/usr/local/cuda
+    - export CUDA_INC_DIR=${CONDA_PREFIX}/pkgs/cuda-toolkit/include:$CUDA_INC_DIR
+    - export CUDA_HOME=${CONDA_PREFIX}/pkgs/cuda-toolkit
     - export PATH=${CUDA_HOME}/bin:${PATH}
     - export LD_LIBRARY_PATH=${CUDA_HOME}/lib64:$LD_LIBRARY_PATH
     - "{{ PYTHON }} -m pip install . -vv"
@@ -30,7 +31,7 @@ requirements:
     - python >=3.6
     - numpy >=1.6
     - setuptools
-    - cudnn
+    - cudatoolkit-dev
   run:
     - python >=3.6
     - appdirs >=1.4.0
@@ -38,7 +39,7 @@ requirements:
     - mako
     - pytools >=2011.2
     - numpy >=1.6
-    - cudnn
+    - cudatoolkit-dev
 
 test:
   imports:
@@ -59,3 +60,4 @@ about:
 extra:
   recipe-maintainers:
     - oblute
+    - /Users/bhuff/opt/anaconda3/envs/cuda/pkgs/cuda-toolkit/include/cuda.h
