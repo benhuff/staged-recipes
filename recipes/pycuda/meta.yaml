@@ -29,6 +29,7 @@ requirements:
     - {{ compiler('cuda') }}
     - cudnn
     - cudatoolkit
+    - nvcc
   host:
     - pip
     - python >=3.6
