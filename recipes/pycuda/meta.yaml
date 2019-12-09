@@ -18,8 +18,7 @@ build:
     - export PATH="${PATH}:${CUDA_HOME}/bin"
     - export C_INCLUDE_PATH="${CUDA_HOME}/include:${C_INCLUDE_PATH}"
     - export LIBRARY_PATH="${CUDA_HOME}/lib64:$LIBRARY_PATH"
-    - "{{ PYTHON }} setup.py build"
-    - "{{ PYTHON }} setup.py install"
+    - "{{ PYTHON }} -m pip install . -vvv"
 
 requirements:
   build:
@@ -31,8 +30,8 @@ requirements:
     - python >=3.6
     - numpy >=1.6
     - setuptools
-    - cudatoolkit
     - cudnn
+    - nccl
   run:
     - python >=3.6
     - appdirs >=1.4.0
@@ -40,6 +39,8 @@ requirements:
     - mako
     - pytools >=2011.2
     - numpy >=1.6
+    - cudnn
+    - nccl
 
 test:
   imports:
