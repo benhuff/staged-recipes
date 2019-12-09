@@ -13,6 +13,14 @@ source:
 
 build:
   number: 0
+  skip: True  # [py2k or osx]
+  script:
+    # CUDA 10.1 moves some headers to `/usr/include`
+    # So add that location last in the header search paths
+    - export CFLAGS="${CFLAGS} -I/usr/include"
+    - export CPPFLAGS="${CPPFLAGS} -I/usr/include"
+    - export CXXFLAGS="${CXXFLAGS} -I/usr/include"
+    - "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   build:
@@ -33,7 +41,6 @@ requirements:
     - pytools >=2011.2
     - numpy >=1.6
     - cudnn
-
 
 test:
   imports:
