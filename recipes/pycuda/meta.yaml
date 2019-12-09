@@ -13,7 +13,7 @@ source:
 
 build:
   number: 0
-  skip: True  # [py2k or osx]
+  skip: True  # [py2k or not linux]
   script:
     - "{{ PYTHON }} -m pip install . -vv"
 
@@ -21,10 +21,7 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - {{ compiler('cuda') }}
-    - cudnn
-    - cudatoolkit
-    - cmake
+    - {{ compiler('cuda') }}  # [linux64 and cuda_compiler_version != "None"]
   host:
     - pip
     - python >=3.6
