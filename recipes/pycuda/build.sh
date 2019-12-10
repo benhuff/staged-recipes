@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-./configure.py --help
-./configure.py --some-options
-make
-make install
+ln -s ${CUDA_HOME}/include/* ${CONDA_PREFIX}/include/
+
+./configure.py
+python setup.py build
+python setup.py install
