@@ -2,4 +2,4 @@
 
 /etc/aksetup-defaults.py
 $HOME/.aksetup-defaults.py
-$PACKAGEDIR/siteconf.py
+$SRC_DIR/siteconf.py
