@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+export PATH=${CUDA_HOME}/bin:${PATH}
 ln -s ${CUDA_HOME}/include/* ${CONDA_PREFIX}/include/
 
 ./configure.py
