@@ -18,6 +18,7 @@ build:
     - export CUDA_HOME="/user/local/cuda"
     - export PATH=${CUDA_HOME}/bin:${PATH}
     - echo ${CUDA_HOME}
+    - ln -s ${CUDA_HOME}/include/* ${SRC_DIR}/src/cpp/
     - {{ PYTHON }} -m pip install . -vv
 
 requirements:
