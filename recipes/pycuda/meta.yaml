@@ -14,10 +14,9 @@ source:
 build:
   number: 0
   skip: True  # [py<=35 or osx or win]
+  script_env:                        # [cuda_compiler_version != "None"]
+    - CUDA_HOME                      # [cuda_compiler_version != "None"]
   script:
-    - echo ${CUDA_HOME}
-    - export PATH="${PATH}:${CUDA_HOME}/bin"
-    - export CUDA_INC_DIR="${CUDA_HOME}/include/"
     - {{ PYTHON }} -m ${SRC_DIR}/configure.py
     - {{ PYTHON }} -m pip install . -vv
 
