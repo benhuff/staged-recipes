@@ -25,7 +25,7 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - {{ compiler('cuda') }}  # [linux64 and cuda_compiler_version != "None"]
+#    - {{ compiler('cuda') }}  # [linux64 and cuda_compiler_version != "None"]
   host:
     - pip
     - python >=3.6
@@ -60,4 +60,3 @@ about:
 extra:
   recipe-maintainers:
     - oblute
-    - /Users/bhuff/opt/anaconda3/envs/cuda/pkgs/cuda-toolkit/include/cuda.h
