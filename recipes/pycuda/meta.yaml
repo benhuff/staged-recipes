@@ -18,6 +18,7 @@ build:
     - export CUDA_INC_DIR=${CUDA_HOME}/include:$CUDA_INC_DIR
     - export PATH=${CUDA_HOME}/bin:${PATH}
     - export LD_LIBRARY_PATH=${CUDA_HOME}/lib64:$LD_LIBRARY_PATH
+    - "{{ PYTHON }} ./configure.py"
     - "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
