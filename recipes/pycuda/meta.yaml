@@ -13,33 +13,24 @@ source:
 
 build:
   number: 0
-  skip: True  # [py2k or osx or win]
-  script:
-    - export CUDA_INC_DIR=${CUDA_HOME}/include:$CUDA_INC_DIR
-    - export PATH=${CUDA_HOME}/bin:${PATH}
-    - export LD_LIBRARY_PATH=${CUDA_HOME}/lib64:$LD_LIBRARY_PATH
-    - "{{ PYTHON }} ./configure.py"
-    - "{{ PYTHON }} -m pip install . -vv"
+  skip: True  # [py<=35 or osx or win]
 
 requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-#    - {{ compiler('cuda') }}  # [linux64 and cuda_compiler_version != "None"]
+    - {{ compiler('cuda') }}  # [linux64 and cuda_compiler_version != "None"]
   host:
     - pip
-    - python >=3.6
+    - python
     - numpy >=1.6
-    - setuptools
-    - cudatoolkit-dev
   run:
-    - python >=3.6
+    - python
+    - numpy >=1.6
     - appdirs >=1.4.0
     - decorator >=3.2.0
     - mako
     - pytools >=2011.2
-    - numpy >=1.6
-    - cudatoolkit-dev
 
 test:
   imports:
