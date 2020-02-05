@@ -3,8 +3,8 @@
 set -ex
 
 export CGO_ENABLED=1
-make build
-make install
+go build
+go install
 
 mkdir -p $PREFIX/bin
 
