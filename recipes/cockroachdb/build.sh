@@ -2,7 +2,8 @@
 
 set -ex
 
-make
+set CGO_ENABLED=1
+make build
 make install
 
 mkdir -p $PREFIX/bin
