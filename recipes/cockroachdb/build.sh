@@ -5,8 +5,8 @@ set -ex
 export GOPATH="${BUILD_PREFIX}/bin"
 export GOROOT="${BUILD_PREFIX}/go"
 
-make build
-make install
+sudo make build
+sudo make install
 
 mkdir -p $PREFIX/bin
 
