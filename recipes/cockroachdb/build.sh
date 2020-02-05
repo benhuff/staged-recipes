@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 
-mkdir build && cd build
-ls
-make build
-make install
+set -ex
+
+export GOPATH="${BUILD_PREFIX}/bin"
+export GOROOT="${BUILD_PREFIX}/go"
+
+make
+
+mkdir -p $PREFIX/bin
+
+mv out/cockroachdb $PREFIX/bin
