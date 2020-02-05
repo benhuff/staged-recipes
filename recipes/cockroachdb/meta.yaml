@@ -17,8 +17,8 @@ requirements:
   build:
     - {{ compiler('cxx') }}
     - go
-    - autoconf >=2.68
-    - cmake >=3.81
+    - autoconf
+    - cmake
     - make
 
 test:
