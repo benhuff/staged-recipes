@@ -23,7 +23,7 @@ requirements:
 
 test:
   commands:
-    - cockroach --version
+    - cockroach version
 
 about:
   home: https://www.cockroachlabs.com/
