@@ -2,7 +2,7 @@
 
 set -ex
 
-set CGO_ENABLED=1
+export CGO_ENABLED=1
 make build
 make install
 
