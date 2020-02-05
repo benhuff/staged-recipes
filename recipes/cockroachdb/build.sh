@@ -5,7 +5,7 @@ set -ex
 echo $PWD
 ls
 mkdir build
-cp /cockroachdb build
+cp $SRC_DIR build
 cd build
 ls
 
