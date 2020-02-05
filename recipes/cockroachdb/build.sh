@@ -2,11 +2,10 @@
 
 set -ex
 
-export CGO_ENABLED=1
 export GOPATH="${BUILD_PREFIX}/bin"
 export GOROOT="${CONDA_PREFIX}/go"
 
-make build
+make build CGO_ENABLED=1
 make install
 
 mkdir -p $PREFIX/bin
