@@ -1,0 +1,40 @@
+{% set name = "cockroachdb" %}
+{% set version = "19.2.2" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+    url: https://binaries.cockroachdb.com/cockroach-v{{ version }}.src.tgz
+    sha256: a2dd9f403301d4331dfd72e27c719e9a4428f3ff954a681230d5e4829a48300c
+
+build:
+  number: 0
+  skip: True  # [win]
+
+requirements:
+  build:
+    - {{ compiler('cxx') }}
+    - go >=1.12.12,1.13.0
+    - autoconf >=2.68
+    - cmake >=3.81
+
+test:
+  commands:
+    - cockroach --version
+
+about:
+  home: https://www.cockroachlabs.com/
+  license: OTHER
+  license_file: LICENSE
+  summary: CockroachDB - the open source, cloud-native SQL database.
+  doc_url: https://www.cockroachlabs.com/docs/stable/
+  dev_url: https://github.com/cockroachdb/cockroach
+
+extra:
+  recipe-maintainers:
+    - mwilson8
+    - rluria14
+    - sodre
+    - benhuff
