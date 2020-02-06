@@ -1,13 +1,15 @@
 {% set name = "cockroachdb" %}
-{% set version = "19.2.2" %}
+{% set version = "19.2.3" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-    url: https://binaries.cockroachdb.com/cockroach-v{{ version }}.src.tgz
-    sha256: a2dd9f403301d4331dfd72e27c719e9a4428f3ff954a681230d5e4829a48300c
+    url: https://binaries.cockroachdb.com/cockroach-v{{ version }}.darwin-10.9-amd64.tgz  # [osx]
+    sha256: f067368a47241995293b24b4b5dcbe9de98b6f541c2975ed77b49e2555b3f9a5  # [osx]
+    url: https://binaries.cockroachdb.com/cockroach-v{{ version }}.linux-amd64.tgz  # [linux]
+    sha256: 05bccf568f320bfc70c24c1f2bccf701372e50c1f4183a43a686426d5b8e2624  # [linux]
 
 build:
   number: 0
@@ -15,11 +17,7 @@ build:
 
 requirements:
   build:
-    - {{ compiler('cxx') }}
     - go
-    - autoconf
-    - cmake
-    - make
 
 test:
   commands:
