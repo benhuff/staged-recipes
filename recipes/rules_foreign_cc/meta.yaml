@@ -1,0 +1,39 @@
+{% set name = "rules_foreign_cc" %}
+{% set version = "0.1" %}
+
+package:
+  name: "{{ name|lower }}"
+  version: {{ version }}
+
+source:
+  url: https://github.com/bazelbuild/{{ name }}/archive/master.tar.gz
+  sha256: b537799a0276e4cc5dcf6650ad2efede87bd75f22f5754b2842fe3e1c21af233
+
+build:
+  number: 0
+
+requirements:
+  host:
+    - python
+    - pip
+    - bazel
+
+  run:
+    - python
+
+test:
+  commands:
+    - exit 0
+about:
+  home: https://github.com/bazelbuild/rules_foreign_cc
+  license: Apache-2.0
+  license_family: APACHE
+  license_file:
+  summary: 'Rules for building C/C++ projects using foreign build systems inside Bazel projects.'
+  doc_url: https://github.com/bazelbuild/rules_foreign_cc
+  dev_url: https://github.com/bazelbuild/rules_foreign_cc
+
+extra:
+  recipe-maintainers:
+     - mwilson8
+     - benhuff
