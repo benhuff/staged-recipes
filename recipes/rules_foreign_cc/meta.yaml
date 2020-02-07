@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/bazelbuild/{{ name }}/archive/master.tar.gz
-  sha256: b537799a0276e4cc5dcf6650ad2efede87bd75f22f5754b2842fe3e1c21af233
+  sha256: 525b906d10e75fe688692455aa7e0edf700bfb2bf1d08151ef46804a99beb900
 
 build:
   number: 0
