@@ -10,7 +10,11 @@ source:
   sha256: ee3ee20fe61281e88337f2b1baee2fd322f7ae6aa28771972479ac93e57499dd
 build:
   number: 0
-  script: bazel build --linkopt="-lrt" differential_privacy/...
+  script_env:
+    - LD_LIBRARY_PATH # [linux]
+    - DYLD_LIBRARY_PATH # [osx]
+  script:
+    - bazel build --linkopt="-lrt" differential_privacy/...
   skip: True  # [win]
 
 requirements:
