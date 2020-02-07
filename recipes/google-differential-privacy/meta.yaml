@@ -19,6 +19,7 @@ requirements:
     - bazel >=0.24
     - {{ compiler('cxx') }}
     - readline
+    - libgcc
 
   host:
     - python
