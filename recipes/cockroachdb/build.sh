@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 set -oex
+set -fvisibility=hidden
 ls
 
 make build
