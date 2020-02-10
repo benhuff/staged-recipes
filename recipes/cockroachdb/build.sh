@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
-set -oex
+set -evx
 
-cmake build
-cmake install
+make distclean
+make build
+make install
 
 mkdir -p $PREFIX/bin
 
