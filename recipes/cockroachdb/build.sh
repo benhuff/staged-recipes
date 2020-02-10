@@ -2,8 +2,7 @@
 
 set -evx
 
-make distclean
-make build
+make 
 make install
 
 mkdir -p $PREFIX/bin
