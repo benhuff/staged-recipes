@@ -1,15 +1,6 @@
 #!/usr/bin/env bash
 
-set -ex
-
-echo $PWD
-ls
-
-mkdir build
-ls
-
-cp $SRC_DIR/cockroach build
-cd build
+set -oex
 ls
 
 make build
