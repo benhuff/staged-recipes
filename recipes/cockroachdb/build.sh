@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 set -oex
-set -fvisibility=hidden
 
 make build
 make install
