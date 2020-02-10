@@ -2,7 +2,6 @@
 
 set -oex
 set -fvisibility=hidden
-ls
 
 make build
 make install
