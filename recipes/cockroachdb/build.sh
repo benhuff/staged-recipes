@@ -2,8 +2,8 @@
 
 set -oex
 
-make build
-make install
+cmake build
+cmake install
 
 mkdir -p $PREFIX/bin
 
