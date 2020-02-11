@@ -2,6 +2,8 @@
 
 set -evx
 
+gcc -print-sysroot
+
 make build
 make install
 
