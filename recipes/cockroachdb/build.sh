@@ -2,8 +2,7 @@
 
 set -evx
 
-export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH
-make
+make build -release
 make install
 
 mkdir -p $PREFIX/bin
