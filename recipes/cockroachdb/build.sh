@@ -3,7 +3,6 @@
 set -evx
 
 autoconf
---with-jemalloc-prefix=je_
 
 make build
 make install
