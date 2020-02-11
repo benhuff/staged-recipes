@@ -2,7 +2,6 @@
 
 set -evx
 
-make help
 make build
 make install
 
