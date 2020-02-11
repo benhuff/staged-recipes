@@ -16,8 +16,7 @@ build:
 requirements:
   build:
     - {{ compiler('cxx') }}
-    - {{ compiler('cgo') }}
-    - go-nocgo
+    - go-cgo
     - autoconf
     - cmake
     - make
