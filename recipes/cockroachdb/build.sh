@@ -2,7 +2,11 @@
 
 set -evx
 
-make build --with-jemalloc-prefix=je_
+autoconf
+./configure \
+--with-jemalloc-prefix=je_
+
+make build
 make install
 
 mkdir -p $PREFIX/bin
