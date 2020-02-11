@@ -11,13 +11,14 @@ source:
 
 build:
   number: 0
-  skip: True  # [win and osx]
+  skip: True  # [not linux]
 
 requirements:
   build:
     - {{ compiler('cxx') }}
-    - {{ compiler('go') }}
+    - {{ compiler('cgo') }}
     - go
+    - go-cgo
     - autoconf
     - cmake
     - make
