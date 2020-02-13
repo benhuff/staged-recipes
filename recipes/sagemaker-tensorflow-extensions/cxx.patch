@@ -1,0 +1,12 @@
+diff --git a/setup.py b/setup.py
+index 8a15570..ddcbb7c 100644
+--- a/setup.py
++++ b/setup.py
+@@ -102,7 +102,6 @@ setup(
+     package_dir={'': 'src'},
+     py_modules=[splitext(basename(path))[0] for path in glob('src/*.py')],
+     ext_modules=[CMakeExtension(name='pipemode_op', sourcedir='src/pipemode_op')],
+-    cmdclass=dict(build_ext=CMakeBuild),
+     long_description=read('README.rst'),
+     url='https://github.com/aws/sagemaker-tensorflow',
+     license='Apache License 2.0',

@@ -1,0 +1,58 @@
+{% set name = "sagemaker-tensorflow-extensions" %}
+{% set version = "0.3.0" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://github.com/aws/{{ name }}/archive/v{{ version }}.tar.gz
+  sha256: 63c2382dfc042a2d317f99fcf973fed904782759fc1bb4a112479fcb5459b16e
+
+build:
+  number: 0
+  skip: True  # [win]
+  script: {{ PYTHON }} -m pip install . -vv
+  patches:
+    - cmd_class.patch
+
+requirements:
+  build:
+    - {{ compiler('cxx') }}
+    - cmake
+    - tensorflow <=1.12
+  host:
+    - pip
+    - python <=3.6
+    - tensorflow <=1.12
+    - sagemaker-python-sdk
+  run:
+    - python <=3.6
+    - tensorflow <=1.12
+    - sagemaker-python-sdk
+
+test:
+  requires:
+    - tox
+    - flake8
+    - pytest
+    - mock
+    - docker-compose
+    - boto3
+    - sagemaker-python-sdk
+  imports:
+    - sagemaker_tensorflow
+
+about:
+  home: https://github.com/aws/sagemaker-tensorflow-extensions
+  license: Apache-2.0
+  license_family: APACHE
+  license_file: LICENSE
+  summary: "SageMaker TensorFlow Containers is an open source library for making the TensorFlow framework run on Amazon SageMaker."
+  doc_url: https://sagemaker.readthedocs.io/en/stable/using_tf.html
+  dev_url: https://github.com/aws/sagemaker-tensorflow-extensions
+
+extra:
+  recipe-maintainers:
+    - benhuff
+    - oblute
