@@ -14,6 +14,7 @@ build:
     - LD_LIBRARY_PATH # [linux]
     - DYLD_LIBRARY_PATH # [osx]
   script:
+    - export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${PREFIX}/lib"
     - bazel build --linkopt="-lrt" differential_privacy/...
   skip: True  # [win]
 
