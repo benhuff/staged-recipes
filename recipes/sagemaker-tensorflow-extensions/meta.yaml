@@ -14,13 +14,15 @@ source:
 build:
   number: 0
   skip: True  # [win]
-  script: {{ PYTHON }} -m pip install . -vv
+  script:
+    - ls
+    - {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
     - {{ compiler('cxx') }}
-    - {{ compiler('cuda') }}
     - cmake
+    - tensorflow <=1.12
   host:
     - pip
     - python <=3.6
