@@ -14,7 +14,9 @@ source:
 build:
   number: 0
   skip: True  # [win]
-  script: {{ PYTHON }} -m pip install . -vv
+  script:
+    - export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${PREFIX}/lib"  
+    - {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
