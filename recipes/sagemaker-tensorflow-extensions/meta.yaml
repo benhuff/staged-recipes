@@ -14,13 +14,12 @@ source:
 build:
   number: 0
   skip: True  # [win]
-  script:
-    - export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${PREFIX}/lib"  
-    - {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
     - {{ compiler('cxx') }}
+    - {{ compiler('cuda' }}
     - cmake
   host:
     - pip
