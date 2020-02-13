@@ -19,7 +19,7 @@ build:
 requirements:
   build:
     - {{ compiler('cxx') }}
-    - {{ compiler('cuda' }}
+    - {{ compiler('cuda') }}
     - cmake
   host:
     - pip
