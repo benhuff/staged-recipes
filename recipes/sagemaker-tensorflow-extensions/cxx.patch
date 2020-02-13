@@ -1,5 +1,5 @@
 diff --git a/setup.py b/setup.py
-index 8a15570..57a8af1 100644
+index 334c555..6cb5801 100644
 --- a/setup.py
 +++ b/setup.py
 @@ -82,7 +82,6 @@ class CMakeBuild(build_ext):
@@ -11,7 +11,7 @@ index 8a15570..57a8af1 100644
          if not os.path.exists(self.build_temp):
              os.makedirs(self.build_temp)
 diff --git a/src/pipemode_op/Dataset/CMakeLists.txt b/src/pipemode_op/Dataset/CMakeLists.txt
-index 03db0f6..ae6c8b7 100644
+index 7be31b2..ae6c8b7 100644
 --- a/src/pipemode_op/Dataset/CMakeLists.txt
 +++ b/src/pipemode_op/Dataset/CMakeLists.txt
 @@ -27,16 +27,11 @@ message("python executable $ENV{PYTHON_EXECUTABLE}")
@@ -25,7 +25,7 @@ index 03db0f6..ae6c8b7 100644
  	OUTPUT_VARIABLE TF_INCLUDE_DIR)
  
 -find_library(TF_LIB 
--	NAMES libtensorflow_framework.so.1
+-	NAMES libtensorflow_framework.so.2
 -	PATHS "${TF_LIB_DIR}"
 -	NO_DEFAULT_PATH)
 -
