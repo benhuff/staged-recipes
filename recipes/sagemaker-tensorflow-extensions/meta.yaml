@@ -15,14 +15,13 @@ build:
   number: 0
   skip: True  # [win]
   script:
-    - ls
+    - {{ PYTHON }} -m pip install tensorflow
     - {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
     - {{ compiler('cxx') }}
     - cmake
-    - tensorflow
   host:
     - pip
     - python <=3.6
