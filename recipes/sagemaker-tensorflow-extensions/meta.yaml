@@ -14,7 +14,6 @@ source:
 build:
   number: 0
   skip: True  # [win]
-  skip: True  # [not x86_64]
   script:
     - ls
     - {{ PYTHON }} -m pip install . -vv
@@ -27,10 +26,11 @@ requirements:
   host:
     - pip
     - python <=3.6
+    - tensorflow
     - sagemaker-python-sdk
   run:
     - python <=3.6
-    - tensorflow <=1.12
+    - tensorflow
     - sagemaker-python-sdk
 
 test:
