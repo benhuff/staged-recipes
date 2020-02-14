@@ -23,11 +23,10 @@ requirements:
   build:
     - {{ compiler('cxx') }}
     - cmake
-    - tensorflow <=1.12
+    - tensorflow
   host:
     - pip
     - python <=3.6
-    - tensorflow <=1.12
     - sagemaker-python-sdk
   run:
     - python <=3.6
