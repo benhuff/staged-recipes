@@ -21,7 +21,6 @@ build:
     - lib/libz.so.1  # [linux]
     - lib/R/lib/libR.dylib  # [osx]
     - lib/libz.1.dylib  # [osx]
-    -
   ignore_run_exports:
     - r-rcpp
     - r-tibble
