@@ -16,7 +16,12 @@ source:
 build:
   merge_build_host: True  # [win]
   number: 0
-
+  missing_dso_whitelist:
+    - lib/R/lib/libR.so
+  ignore_run_exports:
+    - r-rcpp
+    - r-tibble
+    - r-data.table
   rpaths:
     - lib/R/lib/
     - lib/
