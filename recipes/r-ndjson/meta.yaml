@@ -16,6 +16,7 @@ source:
 build:
   merge_build_host: True  # [win]
   number: 0
+  skip: True  # [win and vc<14]
   missing_dso_whitelist:
     - lib/R/lib/libR.so  # [linux]
     - lib/libz.so.1  # [linux]
