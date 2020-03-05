@@ -12,11 +12,12 @@ source:
     - {{ cran_mirror }}/src/contrib/ndjson_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/ndjson/ndjson_{{ version }}.tar.gz
   sha256: 22a037dbad0ae17e0ac442f45370fa7b4c4cc23f66ef1a949fe4e910dd5b7f53
+  patches:
+    - cxx14.patch
 
 build:
   merge_build_host: True  # [win]
   number: 0
-  skip: True  # [win and vc<14]
   missing_dso_whitelist:
     - lib/R/lib/libR.so  # [linux]
     - lib/libz.so.1  # [linux]
