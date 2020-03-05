@@ -1,21 +1,8 @@
-diff --git a/MD5 b/MD5
-index dc89aec..0e2b1db 100644
---- a/MD5
-+++ b/MD5
-@@ -15,7 +15,6 @@ c64235343aa2725a7ad8fe0f804aff64 *man/ndjson.Rd
- 6eb3d626724e02d41840898819445e1b *man/stream_in.Rd
- 9350a0fa16dd09357f3ca08508304f91 *man/validate.Rd
- 84b9d9466128fe3d629a038d5056a25d *src/Makevars
--84b9d9466128fe3d629a038d5056a25d *src/Makevars.win
- c5e51c47858981e2bc9e68184605a8c0 *src/RcppExports.cpp
- 1715bccc862b147441c161c01511dddd *src/gzstream.cpp
- 99d59b3af2c3974f943e118556645888 *src/gzstream.h
 diff --git a/src/Makevars.win b/src/Makevars.win
-index 6a7213d..157ef63 100644
+index 6a7213d..2498966 100644
 --- a/src/Makevars.win
 +++ b/src/Makevars.win
-@@ -1,3 +1,4 @@
-+CXX14 = g++ -std=c++1y -Wno-unused-variable -Wno-unused-function -fPIC
- CXX_STD = CXX14
+@@ -1,3 +1,2 @@
+-CXX_STD = CXX14
  PKG_CXXFLAGS = -I../inst/include
  PKG_LIBS = -L. -lz -lpthread -pthread
