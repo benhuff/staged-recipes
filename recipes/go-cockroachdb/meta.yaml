@@ -15,7 +15,6 @@ build:
 
 requirements:
   build:
-    - {{ compiler('cxx') }}
     - {{ compiler('go-cgo') }}
     - go-cgo
     - autoconf
