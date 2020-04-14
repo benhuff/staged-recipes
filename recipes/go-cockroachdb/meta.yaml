@@ -11,12 +11,12 @@ source:
 
 build:
   number: 0
-  skip: True  # [not linux]
+  skip: True  # [win and osx]
 
 requirements:
   build:
     - {{ compiler('go-cgo') }}
-    - go-cgo
+    - go
     - autoconf
     - cmake
     - make
