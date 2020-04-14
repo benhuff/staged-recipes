@@ -12,12 +12,12 @@ source:
 build:
   number: 0
   skip: True  # [win and osx]
-  binary_relocation: False
+  binary_relocation: True
 
 requirements:
   build:
     - {{ compiler('cxx') }}
-    - {{ compiler('go-cgo') }}
+#    - {{ compiler('go-cgo') }}
     - go-cgo ==1.12.17
     - autoconf
     - cmake
