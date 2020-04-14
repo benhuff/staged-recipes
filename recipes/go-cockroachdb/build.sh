@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -evx
+set -ex
 
 make build
 make install

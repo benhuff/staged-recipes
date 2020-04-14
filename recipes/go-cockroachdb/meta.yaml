@@ -15,8 +15,9 @@ build:
 
 requirements:
   build:
+    - {{ compiler('c') }}
     - {{ compiler('go-cgo') }}
-    - go
+    - go-cgo
     - autoconf
     - cmake
     - make
@@ -35,6 +36,6 @@ about:
 
 extra:
   recipe-maintainers:
-    - mwilson8
+    - oblute
     - rluria14
     - benhuff
