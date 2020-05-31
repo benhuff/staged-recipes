@@ -31,9 +31,8 @@ requirements:
     - python
 
 test:
-  commands:
-    - python -c "import h3"
-    - python -c "h3.versions()"
+  imports:
+    - h3.h3
 
 about:
   home: https://github.com/uber/h3-py.git
