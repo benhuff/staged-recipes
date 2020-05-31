@@ -39,7 +39,7 @@ about:
   home: https://github.com/uber/h3-py.git
   license: Apache-2.0
   license_family: Apache
-  license_file: LICENSE.txt
+  license_file: LICENSE
   summary: Python bindings for H3, a hierarchical hexagonal geospatial indexing system developed by Uber Technologies
   dev_url: https://github.com/uber/h3-py.git
 
