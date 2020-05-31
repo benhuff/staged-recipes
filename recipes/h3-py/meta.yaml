@@ -26,9 +26,9 @@ requirements:
     - python
     - pip
     - scikit-build
+    - cython
   run:
     - python
-    - cython
 
 test:
   commands:
