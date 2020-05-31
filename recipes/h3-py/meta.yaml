@@ -21,7 +21,6 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
   host:
     - python
     - pip
@@ -31,8 +30,8 @@ requirements:
     - python
 
 test:
-  imports:
-    - h3.h3
+  commands:
+    - python -c "import h3.api.numpy_int as h3"
 
 about:
   home: https://github.com/uber/h3-py.git
@@ -41,15 +40,6 @@ about:
   license_file: LICENSE
   summary: Python bindings for H3, a hierarchical hexagonal geospatial indexing system developed by Uber Technologies
   dev_url: https://github.com/uber/h3-py.git
-
-  # The remaining entries in this section are optional, but recommended.
-  description: |
-    simplejson is a simple, fast, complete, correct and extensible
-    JSON <https://json.org> encoder and decoder for Python 2.5+ and
-    Python 3.3+. It is pure Python code with no dependencies, but includes
-    an optional C extension for a serious speed boost.
-  doc_url: https://simplejson.readthedocs.io/
-  dev_url: https://github.com/simplejson/simplejson
 
 extra:
   recipe-maintainers:
