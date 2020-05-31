@@ -27,7 +27,7 @@ requirements:
     - pip
   run:
     - python
-    - scikit-build
+    - skbuild
     - cython
 
 test:
