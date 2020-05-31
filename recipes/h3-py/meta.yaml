@@ -1,0 +1,59 @@
+# Note: there are many handy hints in comments in this example -- remove them when you've finalized your recipe
+
+# Jinja variables help maintain the recipe as you'll update the version only here.
+# Using the name variable with the URL in line 14 is convenient
+# when copying and pasting from another recipe, but not really needed.
+{% set name = "h3" %}
+{% set version = "3.6.1" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 6cc063403ef8b0c97888ff6131bb7791b15b2fb70954588d3e30f230b1ab03c5
+
+build:
+  number: 0
+  script: "{{ PYTHON }} -m pip install . -vv"
+
+requirements:
+  build:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
+    - python
+    - pip
+  run:
+    - python
+    - scikit-build
+    - cython
+
+test:
+  commands:
+    - python -c "import h3"
+    - python -c "h3.versions()"
+
+about:
+  home: https://github.com/uber/h3-py.git
+  license: Apache-2.0
+  license_family: Apache
+  license_file: LICENSE.txt
+  summary: Python bindings for H3, a hierarchical hexagonal geospatial indexing system developed by Uber Technologies
+  dev_url: https://github.com/uber/h3-py.git
+
+  # The remaining entries in this section are optional, but recommended.
+  description: |
+    simplejson is a simple, fast, complete, correct and extensible
+    JSON <https://json.org> encoder and decoder for Python 2.5+ and
+    Python 3.3+. It is pure Python code with no dependencies, but includes
+    an optional C extension for a serious speed boost.
+  doc_url: https://simplejson.readthedocs.io/
+  dev_url: https://github.com/simplejson/simplejson
+
+extra:
+  recipe-maintainers:
+    - oblute
+    - benhuff
+    - geoHeil
