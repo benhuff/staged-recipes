@@ -29,6 +29,8 @@ requirements:
     - cython
   run:
     - python
+    - cython
+    - numpy
 
 test:
   commands:
