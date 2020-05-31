@@ -25,9 +25,9 @@ requirements:
   host:
     - python
     - pip
+    - scikit-build
   run:
     - python
-    - skbuild
     - cython
 
 test:
