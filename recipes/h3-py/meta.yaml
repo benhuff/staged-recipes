@@ -34,7 +34,8 @@ requirements:
 
 test:
   commands:
-    - python -c "import h3.api.numpy_int as h3"
+    - python -c "import h3"
+    - python -c "h3.versions()"
 
 about:
   home: https://github.com/uber/h3-py.git
