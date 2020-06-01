@@ -33,6 +33,8 @@ requirements:
 
 test:
   imports:
+    - h3
+    - h3.api
     - h3.api.basic_str
     - h3.api.basic_int
     - h3.api.numpy_int
