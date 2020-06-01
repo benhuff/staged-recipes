@@ -29,13 +29,14 @@ requirements:
     - cython
   run:
     - python
-    - cython
     - numpy
 
 test:
-  commands:
-    - python -c "import h3"
-    - python -c "h3.versions()"
+  imports:
+    - h3.api.basic_str
+    - h3.api.basic_int
+    - h3.api.numpy_int
+    - h3.api.memview_int
 
 about:
   home: https://github.com/uber/h3-py.git
