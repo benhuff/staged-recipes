@@ -23,6 +23,8 @@ requirements:
 test:
   imports:
     - google_drive_downloader
+  requires:
+    - requests
 
 about:
   home: "https://github.com/ndrplz/google-drive-downloader"
