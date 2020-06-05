@@ -29,7 +29,7 @@ requirements:
     - requests
     - scikit-learn
     - scipy
-    - torch
+    - pytorch
     - tqdm
   run:
     - ase
@@ -45,7 +45,7 @@ requirements:
     - requests
     - scikit-learn
     - scipy
-    - torch
+    - pytorch
     - tqdm
 
 test:
