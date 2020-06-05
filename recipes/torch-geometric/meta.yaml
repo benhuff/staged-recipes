@@ -1,6 +1,9 @@
 {% set name = "torch-geometric" %}
 {% set version = "1.5.0" %}
 
+{% set torch_geometric_proc_type = "cpu" if cuda_compiler_version == "None" else "gpu" %}  # [linux64]
+{% set torch_geometric_proc_type = "cpu" %}                                                # [not linux64]
+
 package:
   name: {{ name|lower }}
   version: {{ version }}
