@@ -15,38 +15,26 @@ build:
 
 requirements:
   host:
-    - ase
-    - googledrivedownloader
-    - h5py
-    - networkx
-    - numba
-    - numpy
-    - pandas
     - pip
-    - plyfile
+    - pytest-runner
     - python
-    - rdflib
-    - requests
-    - scikit-learn
-    - scipy
-    - pytorch
-    - tqdm
+    - setuptools
   run:
-    - ase
+    - python
     - googledrivedownloader
     - h5py
     - networkx
     - numba
     - numpy
+    - tqdm
     - pandas
     - plyfile
-    - python
     - rdflib
     - requests
     - scikit-learn
     - scipy
+    - ase
     - pytorch
-    - tqdm
 
 test:
   imports:
@@ -81,4 +69,4 @@ about:
 
 extra:
   recipe-maintainers:
-    - benhuff 
+    - benhuff
