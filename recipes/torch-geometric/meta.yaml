@@ -2,7 +2,7 @@
 {% set version = "1.5.0" %}
 
 package:
-  name: py{{ name|lower }}
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
@@ -13,50 +13,80 @@ build:
   number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
-requirements:
-  host:
-    - pip
-    - pytest-runner
-    - python
-    - setuptools
-  run:
-    - python
-    - googledrivedownloader
-    - h5py
-    - networkx
-    - numba
-    - numpy
-    - tqdm
-    - pandas
-    - plyfile
-    - rdflib
-    - requests
-    - scikit-learn
-    - scipy
-    - ase
-    - pytorch
+outputs:
+  - name: {{ name|lower }}-proc
+    version: {{ version }}
+    build:
+      number: 0
+      string: "{{ torch_geometric_proc_type }}"
+    test:
+      commands:
+        - exit 0
+    about:
+      home: https://github.com/rusty1s/pytorch_geometric
+      license: UNKNOWN
+      license_family: OTHER
+      summary: A meta-package to select CPU or GPU torch-geometric build.
 
-test:
-  imports:
-    - torch_geometric
-    - torch_geometric.data
-    - torch_geometric.datasets
-    - torch_geometric.io
-    - torch_geometric.nn
-    - torch_geometric.nn.conv
-    - torch_geometric.nn.dense
-    - torch_geometric.nn.glob
-    - torch_geometric.nn.models
-    - torch_geometric.nn.norm
-    - torch_geometric.nn.pool
-    - torch_geometric.nn.unpool
-    - torch_geometric.transforms
-    - torch_geometric.utils
-    - torch_geometric.visualization
-  requires:
-    - mock
-    - pytest
-    - pytest-cov
+  - name: {{ name|lower }}
+    version: {{ version }}
+    build:
+      number: 1
+      script: python -m pip install . -vv
+    requirements:
+      build:
+        - {{ compiler('cuda') }}  # [linux64 and cuda_compiler_version != "None"]
+      host:
+        - pip
+        - pytest-runner
+        - python
+        - setuptools
+      run:
+        - python
+        - googledrivedownloader
+        - h5py
+        - networkx
+        - numba
+        - numpy
+        - tqdm
+        - pandas
+        - plyfile
+        - rdflib
+        - requests
+        - scikit-learn
+        - scipy
+        - ase
+        - pytorch
+      run_constrained:
+        - torch-geometric-proc * {{ torch_geometric_proc_type }}
+    test:
+      imports:
+        - torch_geometric
+        - torch_geometric.data
+        - torch_geometric.datasets
+        - torch_geometric.io
+        - torch_geometric.nn
+        - torch_geometric.nn.conv
+        - torch_geometric.nn.dense
+        - torch_geometric.nn.glob
+        - torch_geometric.nn.models
+        - torch_geometric.nn.norm
+        - torch_geometric.nn.pool
+        - torch_geometric.nn.unpool
+        - torch_geometric.transforms
+        - torch_geometric.utils
+        - torch_geometric.visualization
+      requires:
+        - mock
+        - pytest
+        - pytest-cov
+
+    about:
+      home: https://github.com/rusty1s/pytorch_geometric
+      license: UNKNOWN
+      license_family: OTHER
+      license_file: LICENSE
+      summary: Geometric Deep Learning Extension Library for PyTorch
 
 about:
   home: https://github.com/rusty1s/pytorch_geometric
@@ -68,3 +98,4 @@ about:
 extra:
   recipe-maintainers:
     - benhuff
+
