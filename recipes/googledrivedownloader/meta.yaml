@@ -2,16 +2,16 @@
 {% set version = "0.4" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 4b34c1337b2ff3bf2bd7581818efbdcaea7d50ffd484ccf80809688f5ca0e204
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -27,13 +27,11 @@ test:
     - requests
 
 about:
-  home: "https://github.com/ndrplz/google-drive-downloader"
+  home: https://github.com/ndrplz/google-drive-downloader
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: "Minimal class to download shared files from Google Drive."
-  doc_url: 
-  dev_url: 
+  summary: Minimal class to download shared files from Google Drive.
 
 extra:
   recipe-maintainers:

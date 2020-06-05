@@ -2,16 +2,16 @@
 {% set version = "1.5.0" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: py{{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 131359fb1539ce5c837e8eb2dce8f7abd75294ae0ce44963648cd8646cfde6e1
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -34,7 +34,7 @@ requirements:
     - scikit-learn
     - scipy
     - ase
-    - pytorch 
+    - pytorch
 
 test:
   imports:
@@ -59,13 +59,11 @@ test:
     - pytest-cov
 
 about:
-  home: "https://github.com/rusty1s/pytorch_geometric"
+  home: https://github.com/rusty1s/pytorch_geometric
   license: UNKNOWN
   license_family: OTHER
   license_file: LICENSE
-  summary: "Geometric Deep Learning Extension Library for PyTorch"
-  doc_url: 
-  dev_url: 
+  summary: Geometric Deep Learning Extension Library for PyTorch
 
 extra:
   recipe-maintainers:
