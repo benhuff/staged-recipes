@@ -34,7 +34,7 @@ requirements:
     - scikit-learn
     - scipy
     - ase
-    - pytorch
+    - pytorch 
 
 test:
   imports:
